@@ -1,0 +1,197 @@
+{
+  "page": "dashboard",
+  "version": "1.0.0",
+
+  "sections_order": [
+    "header",
+    "summary_cards",
+    "main_menu",
+    "latest_shipments",
+    "bottom_menu"
+  ],
+
+  "header": {
+    "type": "header",
+    "title": "Warehouse Dashboard",
+    "subtitle": "Cinere Main Warehouse",
+    "user": {
+      "name": "John Doe",
+      "role": "Warehouse Admin",
+      "branch": "Cinere",
+      "avatar": "https://example.com/avatar.jpg"
+    },
+    "notification_count": 4
+  },
+
+  "summary_cards": {
+    "type": "cards",
+    "layout": "horizontal_scroll",
+    "items": [
+      {
+        "key": "shipment_today",
+        "title": "Shipment Today",
+        "value": 128,
+        "icon": "truck",
+        "color": "blue"
+      },
+      {
+        "key": "pending_inbound",
+        "title": "Pending Inbound",
+        "value": 14,
+        "icon": "package",
+        "color": "orange"
+      },
+      {
+        "key": "low_stock",
+        "title": "Low Stock",
+        "value": 6,
+        "icon": "alert_triangle",
+        "color": "red"
+      },
+      {
+        "key": "return_items",
+        "title": "Return Items",
+        "value": 2,
+        "icon": "rotate_ccw",
+        "color": "purple"
+      }
+    ]
+  },
+
+  "main_menu": {
+    "type": "menu_grid",
+    "columns": 4,
+    "items": [
+      {
+        "id": "inbound",
+        "label": "Inbound",
+        "icon": "scan_line",
+        "route": "/inbound",
+        "permission": "warehouse.inbound.view"
+      },
+      {
+        "id": "outbound",
+        "label": "Outbound",
+        "icon": "truck",
+        "route": "/outbound",
+        "permission": "warehouse.outbound.view"
+      },
+      {
+        "id": "stock",
+        "label": "Stock",
+        "icon": "boxes",
+        "route": "/stock",
+        "permission": "warehouse.stock.view"
+      },
+      {
+        "id": "return",
+        "label": "Return",
+        "icon": "rotate_ccw",
+        "route": "/return",
+        "permission": "warehouse.return.view"
+      },
+      {
+        "id": "shipment",
+        "label": "Shipment",
+        "icon": "package_search",
+        "route": "/shipment",
+        "permission": "warehouse.shipment.view"
+      },
+      {
+        "id": "approval",
+        "label": "Approval",
+        "icon": "badge_check",
+        "route": "/approval",
+        "permission": "warehouse.approval.view"
+      },
+      {
+        "id": "scan_packing",
+        "label": "Scan Packing",
+        "icon": "qr_code",
+        "route": "/scan-packing",
+        "permission": "warehouse.scan.view"
+      },
+      {
+        "id": "users",
+        "label": "Users",
+        "icon": "users",
+        "route": "/users",
+        "permission": "warehouse.user.view"
+      }
+    ]
+  },
+
+  "latest_shipments": {
+    "type": "list",
+    "title": "Latest Shipments",
+    "show_view_all": true,
+    "view_all_route": "/shipment",
+    "items": [
+      {
+        "shipment_id": 1001,
+        "packing_code": "PKG-20260507-001",
+        "resi_number": "JNE123456789",
+        "destination_branch": "Papua",
+        "total_items": 10,
+        "status": "IN_TRANSIT",
+        "status_color": "orange",
+        "created_at": "2026-05-07T08:00:00Z"
+      },
+      {
+        "shipment_id": 1002,
+        "packing_code": "PKG-20260507-002",
+        "resi_number": "SICEPAT998877",
+        "destination_branch": "Surabaya",
+        "total_items": 6,
+        "status": "RECEIVED",
+        "status_color": "green",
+        "created_at": "2026-05-07T06:30:00Z"
+      },
+      {
+        "shipment_id": 1003,
+        "packing_code": "PKG-20260507-003",
+        "resi_number": null,
+        "destination_branch": "Makassar",
+        "total_items": 4,
+        "status": "CREATED",
+        "status_color": "blue",
+        "created_at": "2026-05-07T05:00:00Z"
+      }
+    ]
+  },
+
+  "bottom_menu": {
+    "type": "bottom_navigation",
+    "items": [
+      {
+        "id": "home",
+        "label": "Home",
+        "icon": "home",
+        "route": "/dashboard",
+        "active": true
+      },
+      {
+        "id": "scan",
+        "label": "Scan",
+        "icon": "scan_line",
+        "route": "/scan",
+        "active": false
+      },
+      {
+        "id": "notification",
+        "label": "Notif",
+        "icon": "bell",
+        "route": "/notifications",
+        "active": false,
+        "badge": 4
+      },
+      {
+        "id": "profile",
+        "label": "Profile",
+        "icon": "user",
+        "route": "/profile",
+        "active": false
+      }
+    ]
+  }
+}
